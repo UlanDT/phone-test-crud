@@ -1,0 +1,14 @@
+{% extends "users/base.html" %}
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block content %}
+    <a href="{% url 'users:user_list' %}">Home</a>
+
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Delete {{ object.name }}</h2>
+        <button type="submit">Delete</button>
+        <a href="{% url 'users:user_detail' object.id %}">Cancel</a>
+
+    </form>
+{% endblock %}

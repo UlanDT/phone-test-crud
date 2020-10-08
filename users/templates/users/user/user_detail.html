@@ -1,0 +1,11 @@
+{% extends "users/base.html" %}
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block content %}
+    <a href="{% url 'users:user_list' %}">Home</a>
+    <h1>{{ object.name }} {{ object.surname }}</h1>
+    <p>Phone number: {{ object.phone }}</p>
+    <a href="{% url 'users:user_update' object.id %}">Update user</a>
+    <a href="{% url 'users:user_delete' object.id %}">Delete user</a>
+
+{% endblock %}

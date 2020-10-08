@@ -1,0 +1,13 @@
+{% extends "users/base.html" %}
+{% block title %}Search results{% endblock %}
+
+{% block content %}
+    <h1>Search Results</h1>
+    <ul>
+        {% for user in object_list %}
+            <li>
+                {{ user.name }} {{ user.surname }}: {{ user.phone }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
